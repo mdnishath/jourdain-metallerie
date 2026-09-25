@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Jourdain — maquette de site 3D immersif
 
-## Getting Started
+Maquette réalisée pour **JOURDAIN EURL** (métallerie / serrurerie, Carpiquet, près de Caen).
 
-First, run the development server:
+- **Stack** : Next.js 16 · React Three Fiber · GSAP ScrollTrigger · Lenis · Tailwind CSS 4
+- **Hébergement** : Vercel (déploiement automatique à chaque push sur `main`)
+
+## Changer le nom, le logo ou les coordonnées
+
+Tout est centralisé dans **`src/config/brand.ts`** :
+
+- `name` — le nom affiché partout (nav, footer, titres SEO, image de partage)
+- `logo` — laisser `null` pour le logo provisoire dessiné en code, ou mettre le
+  chemin d'un fichier déposé dans `public/brand/` (ex. `"/brand/logo.svg"`)
+- `phones`, `email`, `address`, `hours` — coordonnées et horaires
+- `siteUrl` — l'URL finale du site (utilisée pour les balises Open Graph)
+
+Aucune autre modification n'est nécessaire : le site lit ce fichier partout.
+
+## Ajouter les vraies photos
+
+Dans `src/components/sections/Realisations.tsx`, remplacer les plaques métal par
+des images déposées dans `public/realisations/`.
+
+## Formulaire de devis
+
+`src/app/api/contact/route.ts` reçoit la demande (validation + honeypot anti-spam).
+Pour la version finale, brancher un envoi d'e-mail (Resend, SMTP…) vers `brand.email`.
+
+## Développement
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Puis ouvrir http://localhost:3000.
