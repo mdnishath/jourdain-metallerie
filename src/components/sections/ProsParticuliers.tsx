@@ -30,14 +30,14 @@ const cols = [
 
 export default function ProsParticuliers() {
   return (
-    <section id="pros-particuliers" className="relative bg-coal py-24 md:py-32">
+    <section id="pros-particuliers" className="relative py-24 md:py-32">
       <div className="container-x">
         <Reveal className="mb-14 max-w-2xl">
           <p className="mb-4 flex items-center gap-3 text-[0.72rem] font-semibold uppercase tracking-[0.26em] text-ember">
             <span className="h-px w-8 bg-ember" />
             Pros & particuliers
           </p>
-          <h2 className="font-display text-[clamp(2.6rem,6vw,4.8rem)] leading-[0.95] text-white">
+          <h2 className="font-display text-[clamp(2.6rem,6vw,4.8rem)] leading-[0.95] text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.6)]">
             Le même atelier,
             <br />
             <span className="metal-text">la même exigence.</span>
@@ -47,7 +47,7 @@ export default function ProsParticuliers() {
         <div className="grid gap-4 lg:grid-cols-2">
           {cols.map((c, i) => (
             <Reveal key={c.eyebrow} x={i === 0 ? -50 : 50} y={0}>
-              <div className="group relative h-full overflow-hidden rounded-2xl border border-white/8 bg-steel/60 p-8 md:p-10">
+              <div className="glass group relative h-full overflow-hidden rounded-2xl p-8 md:p-10">
                 <span className="absolute -right-10 -top-10 font-display text-[11rem] leading-none text-white/[0.03] transition-colors duration-500 group-hover:text-ember/[0.06]">
                   {i === 0 ? "PRO" : "PART"}
                 </span>

@@ -3,7 +3,7 @@ import { brand } from "@/config/brand";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/8 bg-iron pb-28 pt-14 md:pb-14">
+    <footer id="footer" className="relative z-10 border-t border-white/8 bg-iron/85 pb-28 pt-14 backdrop-blur-md md:pb-14">
       <div className="container-x grid gap-10 md:grid-cols-[1.2fr_1fr_1fr]">
         <div>
           <Logo />

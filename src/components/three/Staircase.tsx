@@ -1,10 +1,11 @@
 "use client";
 
-import { useMemo, useRef, type MutableRefObject } from "react";
+import { useMemo, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import Sparks from "./Sparks";
 import { STEEL, DARK_STEEL, BLACK_STEEL, EMBER } from "./materials";
+import { world } from "@/lib/world";
 
 /**
  * Escalier droit en acier, assemblé marche par marche selon `progressRef` (0 → 1).
@@ -25,13 +26,7 @@ const stringerLen = Math.hypot(totalH, totalD) + 0.5;
 const clamp01 = (v: number) => Math.min(1, Math.max(0, v));
 const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
 
-export default function Staircase({
-  progressRef,
-  mobile = false,
-}: {
-  progressRef: MutableRefObject<number>;
-  mobile?: boolean;
-}) {
+export default function Staircase({ mobile = false }: { mobile?: boolean }) {
   const root = useRef<THREE.Group>(null);
   const stepRefs = useRef<(THREE.Group | null)[]>([]);
   const matRefs = useRef<(THREE.MeshStandardMaterial | null)[]>([]);
@@ -52,7 +47,7 @@ export default function Staircase({
   );
 
   useFrame((state, dt) => {
-    const p = clamp01(progressRef.current);
+    const p = clamp01(world.forge);
     const build = p * (STEPS + 1.6);
     let weldSet = false;
 
@@ -101,8 +96,7 @@ export default function Staircase({
     // cinematic orbit tied to scroll + idle sway
     if (root.current) {
       const t = state.clock.elapsedTime;
-      const px = mobile ? 0 : state.pointer.x * 0.12;
-      root.current.rotation.y = -0.75 + p * 0.55 + Math.sin(t * 0.3) * 0.03 + px;
+      root.current.rotation.y = -0.35 + p * 0.45 + Math.sin(t * 0.3) * 0.03;
       root.current.position.y = -totalH / 2 + 0.2;
     }
   });

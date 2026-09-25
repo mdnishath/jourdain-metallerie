@@ -43,6 +43,7 @@ html.lenis body {
 
 body {
   background: var(--color-iron);
+  min-height: 100svh;
   color: var(--color-chrome);
   font-family: var(--font-sans);
   overflow-x: hidden;
@@ -96,6 +97,13 @@ body {
       #1b1e23 2px,
       #22262c 4px
     );
+}
+
+@utility glass {
+  background: rgba(12, 13, 15, 0.72);
+  border: 1px solid rgba(207, 211, 217, 0.1);
+  backdrop-filter: blur(18px) saturate(1.1);
+  -webkit-backdrop-filter: blur(18px) saturate(1.1);
 }
 
 @utility hairline {

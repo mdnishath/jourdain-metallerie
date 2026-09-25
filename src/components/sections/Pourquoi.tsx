@@ -27,11 +27,10 @@ const points = [
 
 export default function Pourquoi() {
   return (
-    <section id="pourquoi-nous" className="relative overflow-hidden bg-iron py-24 md:py-32">
-      <div className="pointer-events-none absolute -left-40 top-0 h-[60vh] w-[60vh] rounded-full bg-[radial-gradient(circle,rgba(255,106,26,0.10)_0%,rgba(255,106,26,0)_60%)]" />
+    <section id="pourquoi-nous" className="relative py-24 md:py-32">
       <div className="container-x">
         <div className="grid gap-14 lg:grid-cols-[1.1fr_1fr] lg:gap-20">
-          <div>
+          <div className="glass rounded-2xl p-7 md:p-10">
             <Reveal>
               <p className="mb-4 flex items-center gap-3 text-[0.72rem] font-semibold uppercase tracking-[0.26em] text-ember">
                 <span className="h-px w-8 bg-ember" />

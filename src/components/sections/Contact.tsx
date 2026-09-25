@@ -33,15 +33,14 @@ export default function Contact() {
   const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(brand.mapsQuery)}&z=14&output=embed`;
 
   return (
-    <section id="contact" className="relative overflow-hidden bg-coal py-24 md:py-32">
-      <div className="pointer-events-none absolute -right-40 bottom-0 h-[70vh] w-[70vh] rounded-full bg-[radial-gradient(circle,rgba(255,106,26,0.12)_0%,rgba(255,106,26,0)_60%)]" />
+    <section id="contact" className="relative py-24 md:py-32">
       <div className="container-x">
         <Reveal className="mb-14 max-w-2xl">
           <p className="mb-4 flex items-center gap-3 text-[0.72rem] font-semibold uppercase tracking-[0.26em] text-ember">
             <span className="h-px w-8 bg-ember" />
             Contact & devis
           </p>
-          <h2 className="font-display text-[clamp(2.6rem,6vw,4.8rem)] leading-[0.95] text-white">
+          <h2 className="font-display text-[clamp(2.6rem,6vw,4.8rem)] leading-[0.95] text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.6)]">
             Parlons de
             <br />
             <span className="metal-text">votre projet.</span>
@@ -54,7 +53,7 @@ export default function Contact() {
 
         <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
           {/* infos */}
-          <Reveal x={-40} y={0} className="space-y-8">
+          <Reveal x={-40} y={0} className="glass space-y-8 rounded-2xl p-6 md:p-8">
             <div className="space-y-4">
               {brand.phones.map((p) => (
                 <a
@@ -124,7 +123,7 @@ export default function Contact() {
           <Reveal x={40} y={0}>
             <form
               onSubmit={onSubmit}
-              className="rounded-2xl border border-white/8 bg-steel/60 p-6 md:p-9"
+              className="glass rounded-2xl p-6 md:p-9"
             >
               <div className="grid gap-4 sm:grid-cols-2">
                 <label className="block">

@@ -38,7 +38,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="relative bg-coal py-24 md:py-32">
+    <section id="services" className="relative py-24 md:py-32">
       <div className="container-x">
         <div className="mb-14 grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
           <Reveal>
@@ -46,14 +46,14 @@ export default function Services() {
               <span className="h-px w-8 bg-ember" />
               Nos services
             </p>
-            <h2 className="font-display text-[clamp(2.6rem,6vw,4.8rem)] leading-[0.95] text-white">
+            <h2 className="font-display text-[clamp(2.6rem,6vw,4.8rem)] leading-[0.95] text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.6)]">
               Tout ce qui se fabrique
               <br />
               <span className="metal-text">en métal.</span>
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="max-w-sm text-sm leading-relaxed text-chrome/75 md:text-base">
+            <p className="glass max-w-sm rounded-lg px-5 py-4 text-sm leading-relaxed text-chrome/85 md:text-base">
               Acier, inox, aluminium. Chaque ouvrage est dessiné, fabriqué et posé
               par notre équipe, pour les particuliers comme pour les
               professionnels.
@@ -115,7 +115,7 @@ function TiltCard({ children }: { children: React.ReactNode }) {
       ref={ref}
       onMouseMove={onMove}
       onMouseLeave={onLeave}
-      className="group relative h-full rounded-xl border border-white/8 bg-steel/60 transition-[transform,border-color,box-shadow] duration-300 ease-out will-change-transform hover:border-ember/40 hover:shadow-glow"
+      className="glass group relative h-full rounded-xl transition-[transform,border-color,box-shadow] duration-300 ease-out will-change-transform hover:border-ember/40 hover:shadow-glow"
       style={
         {
           "--mx": "50%",

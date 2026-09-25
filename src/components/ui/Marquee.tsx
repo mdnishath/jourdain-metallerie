@@ -14,7 +14,7 @@ export default function Marquee() {
   return (
     <div
       aria-hidden="true"
-      className="relative overflow-hidden border-y border-white/8 bg-coal py-4"
+      className="relative overflow-hidden border-y border-white/8 bg-iron/40 py-4 backdrop-blur-sm"
     >
       <div className="marquee-track flex w-max whitespace-nowrap">
         {row.map((t, i) => (

@@ -1,4 +1,6 @@
 "use client";
+/* eslint-disable react-hooks/purity, react-hooks/immutability -- particle buffers are
+   intentionally mutable, per-frame GPU data (not React state) */
 
 import { useMemo, useRef, type MutableRefObject } from "react";
 import { useFrame } from "@react-three/fiber";
