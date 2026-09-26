@@ -16,7 +16,7 @@ export default function SmoothScroll({
     const lenis = new Lenis({
       lerp: 0.1,
       smoothWheel: true,
-      anchors: { offset: -72 },
+      anchors: { offset: -84 },
     });
 
     world.lenis = lenis;

@@ -59,7 +59,7 @@ export default function Logo({
         <circle cx="26" cy="26" r="4.5" fill="#ff6a1a" opacity="0.25" />
       </svg>
       {!compact && (
-        <span className="flex flex-col leading-none">
+        <span className="flex flex-col whitespace-nowrap leading-none">
           <span className="font-display text-[1.65rem] leading-none tracking-wide text-white">
             {brand.name}
           </span>
