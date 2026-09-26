@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import Reveal from "@/components/ui/Reveal";
+import Lines from "@/components/ui/Lines";
 
 const services = [
   {
@@ -46,11 +47,10 @@ export default function Services() {
               <span className="h-px w-8 bg-ember" />
               Nos services
             </p>
-            <h2 className="font-display text-[clamp(2.6rem,6vw,4.8rem)] leading-[0.95] text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.6)]">
-              Tout ce qui se fabrique
-              <br />
+            <Lines className="font-display text-[clamp(2.6rem,6vw,4.8rem)] leading-[0.95] text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.6)]">
+              <span>Tout ce qui se fabrique</span>
               <span className="metal-text">en métal.</span>
-            </h2>
+            </Lines>
           </Reveal>
           <Reveal delay={0.1}>
             <p className="glass max-w-sm rounded-lg px-5 py-4 text-sm leading-relaxed text-chrome/85 md:text-base">

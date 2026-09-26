@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import Button from "@/components/ui/Button";
 import { PhoneIcon } from "@/components/ui/Nav";
 import { brand } from "@/config/brand";
-import { gsap, prefersReducedMotion } from "@/lib/gsap";
+import { gsap, ScrollTrigger, prefersReducedMotion } from "@/lib/gsap";
 import { world } from "@/lib/world";
 
 export default function Hero() {
@@ -35,9 +35,23 @@ export default function Hero() {
     if (world.introDone) play();
     else window.addEventListener("world:intro", play, { once: true });
 
+    // content drifts up and fades as we walk through the gate
+    const content = el.querySelector("[data-hero-content]");
+    const st = content
+      ? gsap.to(content, {
+          y: -90,
+          autoAlpha: 0,
+          ease: "none",
+          scrollTrigger: { trigger: el, start: "top top", end: "70% top", scrub: true },
+        })
+      : null;
+
     return () => {
       window.removeEventListener("world:intro", play);
       ctx?.revert();
+      st?.scrollTrigger?.kill();
+      st?.kill();
+      ScrollTrigger.refresh();
     };
   }, []);
 
@@ -52,7 +66,7 @@ export default function Hero() {
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-iron/70 to-transparent" />
 
       <div className="container-x relative z-10 pb-24 pt-32 md:pb-28 md:pt-36">
-        <div className="max-w-2xl">
+        <div data-hero-content className="max-w-2xl">
           <p
             data-hero="eyebrow"
             className="mb-6 flex items-center gap-3 text-[0.72rem] font-semibold uppercase tracking-[0.26em] text-ember"

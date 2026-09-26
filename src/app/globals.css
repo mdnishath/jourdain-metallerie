@@ -187,6 +187,35 @@ body {
   animation: scrollhint 1.8s ease-in-out infinite;
 }
 
+/* Button shine sweep */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    115deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.45) 50%,
+    transparent 70%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.btn-shine:hover::after {
+  transform: translateX(120%);
+}
+
+/* iOS safe area for the sticky bar */
+.safe-bottom {
+  padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+}
+
 /* Form fields */
 .field {
   width: 100%;

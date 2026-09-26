@@ -18,7 +18,7 @@ export default function Atelier({ mobile = false }: { mobile?: boolean }) {
       {/* floor */}
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -1.42, -46]} receiveShadow>
         <planeGeometry args={[80, 150]} />
-        <meshStandardMaterial color="#0b0c0e" roughness={0.9} metalness={0.15} />
+        <meshStandardMaterial color="#0b0c0e" roughness={mobile ? 0.9 : 0.55} metalness={mobile ? 0.15 : 0.6} envMapIntensity={0.6} />
       </mesh>
       <Grid
         position={[0, -1.41, -46]}

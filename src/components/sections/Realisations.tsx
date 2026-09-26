@@ -1,4 +1,5 @@
 import Reveal from "@/components/ui/Reveal";
+import Lines from "@/components/ui/Lines";
 import { WORKS } from "@/config/works";
 
 /**
@@ -16,11 +17,10 @@ export default function Realisations() {
               <span className="h-px w-8 bg-ember" />
               Réalisations
             </p>
-            <h2 className="font-display text-[clamp(2.6rem,6vw,4.8rem)] leading-[0.95] text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.6)]">
-              Fabriqué ici,
-              <br />
+            <Lines className="font-display text-[clamp(2.6rem,6vw,4.8rem)] leading-[0.95] text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.6)]">
+              <span>Fabriqué ici,</span>
               <span className="metal-text">posé chez vous.</span>
-            </h2>
+            </Lines>
           </Reveal>
           <Reveal delay={0.1}>
             <p className="glass mt-6 inline-block rounded-lg px-5 py-4 text-sm leading-relaxed text-chrome/85 md:text-base">

@@ -14,7 +14,8 @@ export default function SmoothScroll({
     if (prefersReducedMotion()) return;
 
     const lenis = new Lenis({
-      lerp: 0.1,
+      lerp: 0.085,
+      wheelMultiplier: 0.95,
       smoothWheel: true,
       anchors: { offset: -84 },
     });

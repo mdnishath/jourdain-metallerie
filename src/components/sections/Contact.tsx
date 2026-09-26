@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import Reveal from "@/components/ui/Reveal";
+import Lines from "@/components/ui/Lines";
 import Button from "@/components/ui/Button";
 import { PhoneIcon } from "@/components/ui/Nav";
 import { brand } from "@/config/brand";
@@ -40,11 +41,10 @@ export default function Contact() {
             <span className="h-px w-8 bg-ember" />
             Contact & devis
           </p>
-          <h2 className="font-display text-[clamp(2.6rem,6vw,4.8rem)] leading-[0.95] text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.6)]">
-            Parlons de
-            <br />
+          <Lines className="font-display text-[clamp(2.6rem,6vw,4.8rem)] leading-[0.95] text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.6)]">
+            <span>Parlons de</span>
             <span className="metal-text">votre projet.</span>
-          </h2>
+          </Lines>
           <p className="mt-5 max-w-lg text-sm leading-relaxed text-chrome/75 md:text-base">
             Décrivez-nous votre besoin en quelques lignes. Nous vous rappelons
             et vous envoyons un devis sous 48 h.

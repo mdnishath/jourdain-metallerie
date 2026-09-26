@@ -5,6 +5,7 @@ import { gsap, ScrollTrigger, prefersReducedMotion } from "@/lib/gsap";
 import { useReducedMotion } from "@/lib/hooks";
 import { world } from "@/lib/world";
 import Button from "@/components/ui/Button";
+import Lines from "@/components/ui/Lines";
 
 const steps = [
   {
@@ -86,13 +87,11 @@ export default function Forge() {
               <span className="h-px w-8 bg-ember" />
               Notre savoir-faire
             </p>
-            <h2 className="font-display text-[clamp(2.2rem,6vw,4.8rem)] leading-[0.95] text-white">
-              Un escalier
-              <br />
+            <Lines className="font-display text-[clamp(2.2rem,6vw,4.8rem)] leading-[0.95] text-white">
+              <span>Un escalier</span>
               <span className="metal-text">qui se construit</span>
-              <br />
-              sous vos yeux.
-            </h2>
+              <span>sous vos yeux.</span>
+            </Lines>
 
             <div ref={textRef} className="mt-5 min-h-[7.5rem] md:mt-8 md:min-h-[9rem]">
               <p className="font-display text-4xl text-ember/90 md:text-5xl">{step.n}</p>

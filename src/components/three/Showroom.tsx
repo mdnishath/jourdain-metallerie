@@ -2,16 +2,30 @@
 
 import { useMemo } from "react";
 import * as THREE from "three";
+import { Text } from "@react-three/drei";
 import { STEEL, DARK_STEEL, BLACK_STEEL } from "./materials";
 
 /** Quatre ouvrages exposés sur socles : portail coulissant, porte, garde-corps, clôture. */
 
-function Plinth({ w = 3.4 }: { w?: number }) {
+function Plinth({ w = 3.4, label }: { w?: number; label?: string }) {
   return (
-    <mesh position={[0, -1.3, 0]} receiveShadow>
-      <boxGeometry args={[w, 0.22, 1.8]} />
-      <meshStandardMaterial color="#14161a" metalness={0.4} roughness={0.7} />
-    </mesh>
+    <group>
+      <mesh position={[0, -1.3, 0]} receiveShadow>
+        <boxGeometry args={[w, 0.22, 1.8]} />
+        <meshStandardMaterial color="#14161a" metalness={0.4} roughness={0.7} />
+      </mesh>
+      {label && (
+        <group position={[0, -1.3, 0.91]}>
+          <Text font="/fonts/bebas.woff" fontSize={0.13} letterSpacing={0.12} anchorX="center" anchorY="middle" color="#cfd3d9">
+            {label}
+          </Text>
+        </group>
+      )}
+      <mesh position={[0, -1.19, 0.86]}>
+        <boxGeometry args={[w - 0.3, 0.006, 0.01]} />
+        <meshStandardMaterial color="#ff6a1a" emissive="#ff6a1a" emissiveIntensity={1.4} toneMapped={false} />
+      </mesh>
+    </group>
   );
 }
 
@@ -45,7 +59,7 @@ function SlidingGate() {
   const slats = Array.from({ length: 9 }, (_, i) => -0.85 + i * 0.21);
   return (
     <group>
-      <Plinth />
+      <Plinth label="PORTAIL COULISSANT" />
       {/* frame */}
       {[[-1.55, 0], [1.55, 0]].map(([x], i) => (
         <mesh key={i} position={[x, 0, 0]}>
@@ -83,7 +97,7 @@ function SlidingGate() {
 function Door() {
   return (
     <group>
-      <Plinth w={2} />
+      <Plinth w={2} label="PORTE MÉTALLIQUE" />
       {/* frame */}
       <mesh position={[-0.62, 0.05, 0]}>
         <boxGeometry args={[0.09, 2.35, 0.14]} />
@@ -125,7 +139,7 @@ function Railing() {
   const bars = Array.from({ length: 19 }, (_, i) => -1.35 + i * 0.15);
   return (
     <group>
-      <Plinth />
+      <Plinth label="GARDE-CORPS" />
       {posts.map((x) => (
         <mesh key={x} position={[x, -0.6, 0]} castShadow>
           <boxGeometry args={[0.05, 1.15, 0.05]} />
@@ -154,7 +168,7 @@ function Fence() {
   const bars = Array.from({ length: 21 }, (_, i) => -1.5 + i * 0.15);
   return (
     <group>
-      <Plinth />
+      <Plinth label="CLÔTURE" />
       {[-1.62, 1.62].map((x) => (
         <mesh key={x} position={[x, -0.25, 0]} castShadow>
           <boxGeometry args={[0.07, 1.9, 0.07]} />

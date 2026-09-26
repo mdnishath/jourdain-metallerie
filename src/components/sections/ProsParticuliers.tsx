@@ -1,4 +1,5 @@
 import Reveal from "@/components/ui/Reveal";
+import Lines from "@/components/ui/Lines";
 import Button from "@/components/ui/Button";
 
 const cols = [
@@ -37,11 +38,10 @@ export default function ProsParticuliers() {
             <span className="h-px w-8 bg-ember" />
             Pros & particuliers
           </p>
-          <h2 className="font-display text-[clamp(2.6rem,6vw,4.8rem)] leading-[0.95] text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.6)]">
-            Le même atelier,
-            <br />
+          <Lines className="font-display text-[clamp(2.6rem,6vw,4.8rem)] leading-[0.95] text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.6)]">
+            <span>Le même atelier,</span>
             <span className="metal-text">la même exigence.</span>
-          </h2>
+          </Lines>
         </Reveal>
 
         <div className="grid gap-4 lg:grid-cols-2">

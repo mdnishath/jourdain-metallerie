@@ -8,7 +8,7 @@ const base =
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-ember text-iron hover:bg-flame hover:shadow-glow active:translate-y-px",
+    "btn-shine bg-ember text-iron hover:bg-flame hover:shadow-glow active:translate-y-px",
   ghost:
     "border border-chrome/25 text-white hover:border-chrome/60 hover:bg-white/5 active:translate-y-px",
   link: "text-ember hover:text-flame underline-offset-4 hover:underline px-0",
@@ -41,7 +41,7 @@ export default function Button({
   const cls = `${base} ${variants[variant]} ${variant === "link" ? "" : sizes[size]} ${className}`;
   if (href) {
     return (
-      <a href={href} className={cls}>
+      <a href={href} className={cls} onClick={onClick}>
         {children}
       </a>
     );

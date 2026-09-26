@@ -1,4 +1,6 @@
 import Nav from "@/components/ui/Nav";
+import SideNav from "@/components/ui/SideNav";
+import Cursor from "@/components/ui/Cursor";
 import StickyMobileBar from "@/components/ui/StickyMobileBar";
 import Marquee from "@/components/ui/Marquee";
 import Loader from "@/components/Loader";
@@ -20,6 +22,8 @@ export default function Home() {
       <World />
       <ScrollTracker />
       <Nav />
+      <SideNav />
+      <Cursor />
       <main className="relative z-10">
         <Hero />
         <Marquee />

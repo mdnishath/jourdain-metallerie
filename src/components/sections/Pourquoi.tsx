@@ -1,4 +1,5 @@
 import Reveal from "@/components/ui/Reveal";
+import Lines from "@/components/ui/Lines";
 import Counter from "@/components/ui/Counter";
 import Button from "@/components/ui/Button";
 import { brand } from "@/config/brand";
@@ -36,11 +37,10 @@ export default function Pourquoi() {
                 <span className="h-px w-8 bg-ember" />
                 Pourquoi nous
               </p>
-              <h2 className="font-display text-[clamp(2.6rem,6vw,4.8rem)] leading-[0.95] text-white">
-                Solide comme l&apos;acier,
-                <br />
+              <Lines className="font-display text-[clamp(2.6rem,6vw,4.8rem)] leading-[0.95] text-white">
+                <span>Solide comme l&apos;acier,</span>
                 <span className="metal-text">rapide comme l&apos;étincelle.</span>
-              </h2>
+              </Lines>
             </Reveal>
 
             <ul className="mt-10 space-y-6">

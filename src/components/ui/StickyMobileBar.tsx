@@ -3,7 +3,7 @@ import { PhoneIcon } from "./Nav";
 
 export default function StickyMobileBar() {
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-iron/90 p-3 backdrop-blur-md md:hidden">
+    <div className="safe-bottom fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-iron/92 px-3 pt-3 backdrop-blur-md md:hidden">
       <div className="grid grid-cols-2 gap-3">
         <a
           href={brand.phones[0].href}
